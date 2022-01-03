@@ -1,0 +1,65 @@
+package com.pawmap.impl;
+
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pawmap.VO.PetVO;
+import com.pawmap.mapper.PetMapper;
+import com.pawmap.service.PetService;
+
+@Service
+public class PetServiceImpl implements PetService {
+
+	@Autowired
+	private PetMapper petMapper;
+
+	@Override
+	public boolean registerPet(PetVO params) {
+		int queryResult = 0;
+
+		if (params.getPetSeq() == 0) {
+			queryResult = petMapper.insertPetInfo(params);
+		} else {
+			queryResult = petMapper.updatePetInfo(params);
+		}
+
+		return (queryResult == 1) ? true : false;
+	}
+
+
+	@Override
+	public boolean deletePetInfo(PetVO petVO) {
+		int queryResult = 0;
+
+		PetVO petSeq = petMapper.selectPetInfo(petSeq);
+
+		if (petSeq != null && "N".equals(petSeq.getStatus())) {
+			queryResult = petMapper.deletePetInfo(petSeq);
+		}
+
+		return (queryResult == 1) ? true : false;
+	}
+
+
+	@Override
+	public PetVO getPetInfo(Long seq) {
+		return petMapper.selectPetInfo(seq);
+	}
+
+//	@Override
+//	public List<BoardDTO> getBoardList() {
+//		List<BoardDTO> boardList = Collections.emptyList();
+//
+//		int boardTotalCount = boardMapper.selectBoardTotalCount();
+//
+//		if (boardTotalCount > 0) {
+//			boardList = boardMapper.selectBoardList();
+//		}
+//
+//		return boardList;
+//	}
+
+}

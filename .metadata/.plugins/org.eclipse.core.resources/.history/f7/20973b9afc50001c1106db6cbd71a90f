@@ -1,0 +1,63 @@
+package com.pawmap.impl;
+
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.pawmap.VO.FileVO;
+import com.pawmap.VO.PetVO;
+import com.pawmap.mapper.PetMapper;
+import com.pawmap.service.PetService;
+
+@Service
+public class PetServiceImpl implements PetService {
+
+	@Autowired
+	private PetMapper petMapper;
+
+	@Override
+	public PetVO insertPetInfo(PetVO vo) {
+		return petMapper.insertPetInfo(vo);
+	}
+
+
+	@Override
+	public void deletePetInfo(int petSeq) {
+		
+
+		PetVO pet = petMapper.selectPetInfo(vo);
+
+		if (pet != null && "N".equals(pet.getStatus())) {
+			petMapper.deletePetInfo(vo);
+		}else {
+			
+		}
+		
+	}
+
+
+	@Override
+	public PetVO selectPetInfo(PetVO vo) {
+		return petMapper.selectPetInfo(vo);
+	}
+
+
+
+	@Override
+	public void updatePetInfo(PetVO vo) {
+		petMapper.updatePetInfo(vo);		
+	}
+
+
+	@Override
+	public List<PetVO> getPetList(PetVO vo) {
+		return petMapper.getPetList(vo);
+	}
+
+
+
+}

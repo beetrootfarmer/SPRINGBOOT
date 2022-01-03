@@ -1,0 +1,51 @@
+1637644918948	Delete element
+1637644970629	Delete element
+1637645005529	Rename package 'com.pawmap.controller'
+1637645041115	Rename package 'com.pawmap.dao'
+1637645061566	Rename package 'com.pawmap.dto'
+1637645083607	Rename package 'com.pawmap.handler'
+1637645122589	Rename package 'com.pawmap.impl'
+1637645133971	Delete element
+1637645146074	Rename package 'com.pawmap.service'
+1637645151163	Delete element
+1637645162253	Rename package 'com.pawmap.util'
+1637645167875	Delete element
+1637645491596	Delete element
+1637645522833	Delete element
+1637645528004	Delete element
+1637645565013	Delete element
+1637648984461	Rename resource 'application.properties'
+1637648989718	Rename resource 'application.tml'
+1637649605413	Move compilation unit
+1637649710879	Delete element
+1637649815101	Delete elements
+1637649884026	Delete elements
+1637649889147	Delete element
+1637649894109	Rename resource 'Jjoin.jsp'
+1637649897986	Rename resource 'Jlogin.jsp'
+1637650842169	Rename package 'com.example.sbs.controller'
+1637651097755	Delete elements
+1637651148767	Rename package 'com.example.sbs.demo.controller'
+1637651156473	Rename package 'com.example.sbs.demo.controller1'
+1637651223149	Move packages
+1637651282169	Move packages
+1637651629528	Rename resource 'views'
+1637651673405	Rename resource 'member'
+1637651689171	Move 'join.jsp' to 'member'
+1637651734193	Move 'login.jsp' to 'member'
+1637651739579	Move 2 resources to 'member'
+1637655553231	Copy elements
+1637655747519	Copy compilation unit
+1637655754757	Copy compilation unit
+1637655762582	Copy compilation unit
+1637655793647	Copy compilation units
+1637655806144	Copy compilation units
+1637655816753	Copy compilation units
+1637717563401	Rename package 'com.example.sbs.demo'
+1637717599243	Copy package
+1637717606176	Copy package
+1637717614304	Copy package
+1637717635829	Delete element
+1637717706807	Rename package 'com.pawmap.imple'
+1637717771757	Move compilation unit
+1637717894802	Delete element

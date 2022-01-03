@@ -1,0 +1,34 @@
+package com.pawmap.VO;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class VetVO {
+
+	/** 번호 (PK) */
+	private int vetSeq;
+	//petFileVO를 따로 만들어야하나?
+	
+	/** 회원명 **/
+	private int hospitalSeq;
+
+	/** 동물명 */
+	private String vetName;
+
+	/** 성별 **/
+	private String vetMajor;
+	
+	/** 나이 */
+	private String vetIntro;
+
+	
+	
+//	vetProfile
+//	vetProfileSize
+	
+}

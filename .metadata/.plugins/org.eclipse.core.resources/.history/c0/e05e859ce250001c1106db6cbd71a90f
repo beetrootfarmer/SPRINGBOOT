@@ -1,0 +1,70 @@
+package com.pawmap.controller;
+
+import org.junit.Test;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pawmap.VO.PetVO;
+import com.pawmap.mapper.PetMapper;
+
+public class TestPetController {
+	
+	PetMapper petMapper;
+	
+	@Test
+	public void testOfSelectDetail() {
+		PetVO board = petMapper.selectPetDetail((long) 1);
+		try {
+			String boardJson = new ObjectMapper().writeValueAsString(board);
+
+			System.out.println("=========================");
+			System.out.println(boardJson);
+			System.out.println("=========================");
+
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+	}
+
+@Test
+	public void testOfUpdate() {
+		PetVO params = new PetVO();
+		params.setTitle("1번 게시글 제목을 수정합니다.");
+		params.setContent("1번 게시글 내용을 수정합니다.");
+		params.setWriter("홍길동");
+		params.setIdx((long) 1);
+
+		int result = petMapper.updateBoard(params);
+		if (result == 1) {
+			PetVO board = petMapper.selectBoardDetail((long) 1);
+			try {
+				String boardJson = new ObjectMapper().writeValueAsString(board);
+
+				System.out.println("=========================");
+				System.out.println(boardJson);
+				System.out.println("=========================");
+
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+@Test
+	public void testOfDelete() {
+		int result = petMapper.deleteBoard((long) 1);
+		if (result == 1) {
+			PetVO board = petMapper.selectBoardDetail((long) 1);
+			try {
+				String boardJson = new ObjectMapper().writeValueAsString(board);
+
+				System.out.println("=========================");
+				System.out.println(boardJson);
+				System.out.println("=========================");
+
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

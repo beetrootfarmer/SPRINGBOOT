@@ -1,0 +1,17 @@
+package com.pawmap.service;
+
+import java.util.List;
+
+import com.pawmap.VO.PetVO;
+
+public interface PetService {
+
+	public boolean registerBoard(PetVO params);
+
+	public PetVO getBoardDetail(Long idx);
+
+	public boolean deleteBoard(Long idx);
+
+	public List<PetVO> getBoardList();
+
+}

@@ -1,0 +1,20 @@
+package com.pawmap.service;
+
+import org.springframework.ui.Model;
+
+import com.pawmap.VO.PetVO;
+import com.pawmap.VO.UserVO;
+
+public interface PetService {
+
+	PetVO insertPetInfo(PetVO vo);
+
+	PetVO selectPetInfo(PetVO petVO);
+		
+	public void deletePetInfo(PetVO petVO);
+
+	String updatePetInfo(int petSeq, Model model);
+
+	//public List<PetVO> getPetInfoList();
+
+}

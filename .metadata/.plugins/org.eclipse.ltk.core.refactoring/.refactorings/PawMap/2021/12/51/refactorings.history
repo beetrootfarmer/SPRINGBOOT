@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;application.properties&apos; to &apos;PawMap/src/main/resources&apos;&#x0A;- Original project: &apos;PawMap&apos;&#x0A;- Destination element: &apos;PawMap/src/main/resources&apos;&#x0A;- Original element: &apos;application.properties&apos;&#x0A;- Update references to refactored element" description="Move file" destination="/src\/main\/resources=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/" element1="src/main/resources/static/application.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1639452108745" units="0" version="1.0"/>
+</session>

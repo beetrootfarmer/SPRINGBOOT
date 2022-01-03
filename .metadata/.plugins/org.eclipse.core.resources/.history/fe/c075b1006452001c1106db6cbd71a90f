@@ -1,0 +1,71 @@
+let index = {
+	
+	init:function(){
+		$("#delete-petInfo").on("click",()=>{
+			this.deletePetInfo();
+		});
+		
+		//$("#updateCommentOnFreeBoard").on("click",()=>{
+		//	this.updateCommentOnFreeBoard();
+		//});
+
+		
+	},
+	
+	deletePetInfo:function(){
+		
+		let petSeq = $("#petSeq");
+		
+		
+		if(confirm("정말 삭제하시겠습니까?")){
+			$.ajax({
+				type : "POST",
+				url: "deletePetInfo/"+petSeq,
+				contentType : "application/json; charset=utf-8",
+			}).done(function(resp){
+				alert("삭제 성공");
+		//컨트롤러 메소드로 보내줘서 경로 설정 		
+				location.href = "getPetList"
+			}).fail(function(error){
+				alert(error);
+				console.log(error);
+			});
+			
+		}else{
+			
+		}
+	},
+
+	updatePetInfo:function(){
+		let petSeq = $("#petSeq").val();
+		
+		let data = {
+			title: $("#title").val(),
+			content: $("#content").val(),
+			boardSeq : freeBoardSeq,
+			userId : $("#user_id").val(),
+			boardType : $("#boardType").val() 
+		};
+		alert("글 수정하기");
+		console.log("updateFreeBoard:function 탐, freeBoardSeq ==="+freeBoardSeq+"data =======: "+ data);
+		$.ajax({
+			type: 'POST',
+			url: "updateFreeAndNanumBoardForm/api/"+freeBoardSeq,
+			data : JSON.stringify(data),
+			contentType : 'application/json; charset=utf-8',
+			success : function() {
+				alert("1111");
+				location.href ="getFreeBoard?boardSeq="+freeBoardSeq
+			},
+			error : function(e) {
+				console.log(e);
+			}
+		});
+	},
+	
+
+
+}
+
+
+index.init();

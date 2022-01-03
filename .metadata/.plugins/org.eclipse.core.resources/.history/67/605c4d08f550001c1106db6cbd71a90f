@@ -1,0 +1,18 @@
+package com.pawmap.service;
+
+import com.pawmap.VO.PetVO;
+import com.pawmap.VO.UserVO;
+
+public interface PetService {
+
+	void insertPetInfo(PetVO params);
+
+	PetVO selectPetInfo(PetVO petVO);
+	
+	void updatePetInfo(PetVO vo);
+	
+	public void deletePetInfo(PetVO petVO);
+
+	//public List<PetVO> getPetInfoList();
+
+}
