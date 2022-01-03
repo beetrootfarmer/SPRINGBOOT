@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: local # 기본적으로 local이 선택된다는 뜻
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sbs_exam_1?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: study
+    password: Minam2!!!!!
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/ 
+      suffix: .jsp
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: pos04118
+    password: ihniofzphzzazukx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+---
+
+spring:
+  profiles: local
+server:
+  port: 8071
+
+---
+
+# 운영환경만의 설정
+spring:
+  profiles: production
+server:
+  port: 8072
