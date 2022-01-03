@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- mapper DTO 선언 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper가 인터페이스에서 구현이 되기때문에 namespace로 어떤 인터페이스를 상속 받았는지 표시  -->
+<mapper namespace="com.springbook.mapper.UserMapper">
+
+	<select id="findById" parameterType="String" resultType="com.springbook.vo.MemberVO">
+		SELECT * FROM MAMBER
+			WHERE ID = #{username}
+	</select>
+	
+	<insert id="join" parameterType="com.springbook.vo.MemberVO">
+		INSERT INTO MEMBER (
+							ID
+							, PASSWORD
+							, NAME
+							, ROLE
+							, ENABLED
+							)
+					VALUES (
+							#{id}
+							,#{password}
+							,#{name}
+							,'ROLE_MEMBER'
+							, 'Y'
+					
+					)
+	</insert>
+
+</mapper>
